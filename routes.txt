@@ -1,0 +1,115 @@
+USE-CASE:
+-user:
+    - egyesület hozzáadása
+    - egyesület törlése
+    - egyesület módosítása
+    - sportoló hozzáadása
+    - sportoló törlése
+    - sportoló módosítása
+    - egyesület listázása
+    - sportoló listázása
+
+
+
+SCREEN:
+1. egyesületek lista (alapértelmezett)
+    - egyesület módosítása start (egyesületenként)
+    - egyesület törlése start (egyesületenként)
+- egyesület hozzáadása
+
+2. sportolók lista
+    - sportoló módosítása start (sportolónként)
+    - sportoló törlése start (sportolónként)
+- sportoló hozzáadása start
+
+3. egyesület hozzáadása/módosítása (egyesületenként)
+4. sportoló hozzáadása/módosítása (sportolónként)
+
+
+
+ROUTES:
+
+renderMW: html-t generál és küld vissza
+
+getAllEgyesuletMW: adatbázisból kinyeri az egyesületeket, és elhelyezi őket a res.locals-ba
+
+saveEgyesuletMW: ha nincs POST, ha nem érkezett post adat, akkor hívjunk next-et
+    -redirect(/egyesulet/new)
+    -elmentem adatbázisba és utána a felhasznalót átirányítom a /egyesulet url-re
+
+getEgyesuletMW: az url-ben érkező egyesulet_id alapján kinyeri az adatbázisból az adott egyesületet
+    - ha nincs, akkor redirect az /egyesulet-re 
+    - ha van, akkor elmenti a res.locals.egyesulet-be és next-et hív
+
+deleteEgyesuletMW: ellenőrzi, hogy létezik-e adat az egyesülethez a res.locals.egyesulet-ben
+    - ha nem, akkor next-et hívunk
+    - ha igen, akkor törli az adatokat az adatbázisból és next-et hívunk
+
+
+getAllSportoloMW: adatbázisból kinyeri a sportolóakt, és elhelyezi őket a res.locals-ba
+
+saveSportoloMW: ha nincs POST, ha nem érkezett post adat, akkor hívjunk next-et
+    -redirect(/sportolo/new)
+    -elmentem adatbázisba és utána a felhasznalót átirányítom a /sportolo url-re
+
+getSportoloMW: az url-ben érkező sportolo_id alapján kinyeri az adatbázisból az adott sportolót
+    - ha nincs, akkor redirect az /sportolo-ra
+    - ha van, akkor elmenti a res.locals.egyesulet-be és next-et hív
+
+deleteSportoloMW: ellenőrzi, hogy létezik-e adat az sportolóhoz a res.locals.sportolo-ban
+    - ha nem, akkor next-et hívunk
+    - ha igen, akkor törli az adatokat az adatbázisból és next-et hívunk
+
+
+
+EGYESÜLET:
+
+GET /egyesulet                      egyesületek lista
+    getAllEgyesuletMW()
+    renderMW('egyesulet.html')
+
+GET /egyesulet/new                  egyesület hozzáadása
+    renderMW('edit_egyesulet.html')
+
+POST /egyesulet/new                 egyesület hozzáadása
+    saveEgyesuletMW()
+
+GET /egyesulet/edit/:egyesulet_id   egyesület módosítása
+    getEgyesuletMW()
+    renderMW('edit_egyesulet.html')
+
+POST /egyesulet/edit/:egyesulet_id  egyesület módosítása
+    saveEgyesuletMW()
+
+GET /egyesulet/del/:egyesulet_id    egyesület törlése
+    getEgyesuletMW()
+    deleteEgyesuletMW()
+
+POST /egyesulet/del/:egyesulet_id   egyesület törlése
+
+
+
+SPORTOLÓ:
+
+GET /sportolo                       sportolók lista
+    getAllSportoloMW()
+    renderMW('sportolo.html')
+
+GET /sportolo/new                   sportoló hozzáadása
+    renderMW('edit_sportolo.html')
+
+POST /sportolo/new                  sportoló hozzáadása
+    saveSportoloMW()
+
+GET /sportolo/edit/:sportolo_id     sportoló módosítása
+    getSportoloMW()
+    renderMW('edit_sportolo.html')
+
+POST /sportolo/edit/:sportolo_id    sportoló módosítása
+    saveSportoloMW()
+
+GET /sportolo/del/:sportolo_id      sportoló törlése
+    getSportoloMW()
+    deleteSportoloMW()
+
+POST /sportolo/del/:sportolo_id     sportoló törlése

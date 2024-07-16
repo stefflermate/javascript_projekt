@@ -1,0 +1,30 @@
+<%-include('header') %>
+
+    <div>
+        <h1>Sportegyesület
+            <% if (typeof egyesulet==='undefined' ) { %>
+                létrehozása:
+                <% }else{ %>
+                    módosítása:
+                    <% } %>
+        </h1>
+    </div>
+
+    <form method="POST">
+    <div class="container">
+        <div class="item">Név:</div>
+        <div class="item"><input type="text" id="name" name="name"
+        value="<%= (typeof egyesulet === 'undefined') ? '' : egyesulet.name %>"></div>
+        <div class="item">Alapítási év:</div>
+        <div class="item"><input type="text" id="year" name="year"
+            value="<%= (typeof egyesulet === 'undefined') ? '' : egyesulet.year %>"></div>
+        <div class="item">Elnök:</div>
+        <div class="item"><input type="text" id="president" name="president"
+            value="<%= (typeof egyesulet === 'undefined') ? '' : egyesulet.president %>"></div>
+        <!--<div class="item"><button class="btn_mentes">Mentés</button></div> -->
+        <input type="submit" class="btn_mentes" value="Mentés"/>
+        <a class="btn_vissza" href="/egyesulet">Vissza</a>    
+    </div>
+    </form>
+
+    <%- include('footer') %>

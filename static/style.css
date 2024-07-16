@@ -1,0 +1,233 @@
+h1 {
+    font-size: 50px;
+    margin-left: 80px;
+    margin-top: 80px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+}
+
+a {
+    color: black;
+}
+
+.tablazat_div {
+    margin-top: 100px;
+}
+
+
+th {
+    font-size: 40px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+}
+
+.first_column_header {
+    text-align: left;
+    padding-left: 40px;
+    border-bottom: 8px solid black;
+}
+
+.second_column_header {
+    text-align: left;
+    padding-left: 100px;
+    width: 300px;
+    padding-right: 100px;
+    border-bottom: 8px solid black;
+}
+
+.third_column_header {
+    text-align: left;
+    padding-left: 130px;
+    width: 160px;
+    padding-right: 100px;
+    border-bottom: 8px solid black;
+}
+
+.fourth_column_header {
+    width: 200px;
+    padding-left: 130px;
+}
+
+/*----*/
+
+.first_column {
+    padding-left: 40px;
+    width: 480px;
+    border-bottom: 8px solid black;
+}
+
+.second_column {
+    width: 255px;
+    padding-left: 102px;
+    padding-right: 150px;
+    border-bottom: 8px solid black;
+}
+
+.third_column {
+    width: 300px;
+    padding-left: 134px;
+    padding-right: 10px;
+    border-bottom: 8px solid black;
+}
+
+.fourth_column {
+    width: 100px;
+    padding-left: 60px;
+}
+
+.fifth_column {
+    width: 100px;
+}
+
+td {
+    font-size: 27px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 20px 10px 15px 0px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.btn_uj_egyesulet {
+    font-size: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background-color: gray;
+    border: 0px;
+    padding-left: 15px;
+    padding-right: 13px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+}
+
+.btn_uj_egyesulet:hover{
+    cursor: pointer;
+    border-radius: 8px;
+    transform: scale(1.05);
+    transition: 0.8s;
+}
+
+.edit_icon_1 {
+    width: 30%;
+    height: 30%;
+}
+
+.edit_icon_1:hover{
+    cursor: pointer;
+    transform: scale(1.15);
+    transition: 0.8s;
+}
+
+.delete_icon_1 {
+    width: 180%;
+    height: 180%;
+}
+
+.delete_icon_1:hover{
+    cursor: pointer;
+    transform: scale(1.15);
+    transition: 0.8s;
+}
+
+.btn_vissza_egyesuletre {
+    font-size: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background-color: gray;
+    border: 0px;
+    padding-left: 15px;
+    padding-right: 13px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    margin-left: 1100px;
+}
+
+.btn_vissza_egyesuletre:hover {
+    cursor: pointer;
+    border-radius: 8px;
+    transform: scale(1.05);
+    transition: 0.8s;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 120px 120px 120px 150px 150px;
+}
+
+.item {
+    font-size: 40px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    margin-left: 250px;
+}
+
+input {
+    height: 45px;
+    width: 350px;
+    background-color: gray;
+    border: solid 4px black;
+    font-size: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    padding-left: 15px;
+}
+
+.btn_mentes {
+    font-size: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background-color: gray;
+    border: 0px;
+    padding-left: 15px;
+    padding-right: 13px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    margin-left: 400px;
+    margin-top: 60px;
+}
+
+.btn_mentes:hover {
+    cursor: pointer;
+    border-radius: 8px;
+    transform: scale(1.05);
+    transition: 0.8s;
+}
+
+.btn_vissza {
+    font-size: 25px;
+    text-decoration: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background-color: gray;
+    border: 0px;
+    padding-left: 50px;
+    padding-right: 13px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    margin-left: 290px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    margin-right: 50px;
+    height: 28px;
+}
+
+.btn_vissza:hover {
+    cursor: pointer;
+    border-radius: 8px;
+    transform: scale(1.05);
+    transition: 0.8s;
+}

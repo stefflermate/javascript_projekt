@@ -1,0 +1,48 @@
+<%- include('header') %>
+
+  <div>
+    <h1>Sportegyesület:</h1>
+  </div>
+  <div class="tablazat_div">
+    <table>
+      <tr>
+        <th class="first_column_header">Név:</th>
+        <th class="second_column_header">Alapítási év:</th>
+        <th class="third_column_header">Elnök:</th>
+        <th class="fourth_column_header">
+          <button class="btn_uj_egyesulet" onclick="window.location.href='/egyesulet/new'">
+            Új egyesület
+          </button>
+        </th>
+      </tr>
+
+      <% for(let i=0; i < egyesuletek.length; i++){ const egyesulet=egyesuletek[i]; %>
+
+        <tr>
+          <td class="first_column">
+            <a href="/sportolo/<%= egyesulet._id %>">
+              <%= egyesulet.name %>
+            </a>
+          </td>
+          <td class="second_column">
+            <%= egyesulet.year %>
+          </td>
+          <td class="third_column">
+            <%= egyesulet.president %>
+          </td>
+          <td class="fourth_column">
+            <img onclick="window.location.href='/egyesulet/edit/<%= egyesulet._id %>'" class="edit_icon_1"
+              src="/images/edit_icon.png" />
+          </td>
+          <td class="fifth_column">
+            <img onclick="window.location.href='/egyesulet/del/<%= egyesulet._id %>'" class="delete_icon_1"
+              src="/images/delete_icon.png" />
+          </td>
+        </tr>
+        <tr>
+
+          <% } %>
+    </table>
+  </div>
+
+  <%-include('footer') %>

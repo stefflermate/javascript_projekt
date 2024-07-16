@@ -1,0 +1,51 @@
+<%-include('header') %>
+
+<div>
+  <h1>Sportoló:</h1>
+  <button
+    class="btn_vissza_egyesuletre"
+    onclick="window.location.href='/egyesulet'">
+    Vissza az egyesületekre
+  </button>
+</div>
+
+<div class="tablazat_div">
+  <table>
+    <tr>
+      <th class="first_column_header">Név:</th>
+      <th class="second_column_header">Születési év:</th>
+      <th class="third_column_header">Sport:</th>
+      <th class="fourth_column_header">
+        <button class="btn_uj_egyesulet" onclick="window.location.href='/sportolo/<%= egyesulet._id %>/new'">
+          Új sportoló
+        </button>
+      </th>
+    </tr>
+
+    <% for(let i = 0; i < sportolok.length; i++) { const sportolo =
+    sportolok[i]; %>
+
+    <tr>
+      <td class="first_column"><%=sportolo.name%></td>
+      <td class="second_column"><%=sportolo.year%></td>
+      <td class="third_column"><%=sportolo.sport%></td>
+      <td class="fourth_column">
+        <img
+          onclick="window.location.href='/sportolo/<%= egyesulet._id %>/edit/<%= sportolo._id %>'"
+          class="edit_icon_1"
+          src="/images/edit_icon.png"
+        />
+      </td>
+      <td class="fifth_column">
+        <img
+          onclick="window.location.href='/sportolo/<%= egyesulet._id %>/del/<%= sportolo._id %>'"
+          class="delete_icon_1"
+          src="/images/delete_icon.png"
+        />
+      </td>
+    </tr>
+    <% } %>
+  </table>
+</div>
+
+<%-include('footer') %>
